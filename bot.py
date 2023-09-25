@@ -10,8 +10,7 @@ async def on_message_delete(message):
                           description="", color=0xFF0000)
     embed.add_field(name=message.content, value="This is the message that they have deleted",
                     inline=True)
-    channel = bot.get_channel() #put channel id here
-    await channel.send(embed=embed)
+    await message.channel.send(embed=embed)
 
 
 @bot.event
@@ -22,7 +21,6 @@ async def on_message_edit(message_before, message_after):
                     inline=True)
     embed.add_field(name=message_after.content, value="after the edit",
                     inline=True)
-    channel = bot.get_channel() #put channel id here
-    await channel.send(embed=embed)
+    await message_before.channel.send(embed=embed)
 
 bot.run(token=TOKEN)
