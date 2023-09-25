@@ -1,6 +1,5 @@
 import discord
 from discord.ext import commands
-from bot_token import TOKEN
 
 bot = commands.Bot(command_prefix="!", intents=discord.Intents.all())
 
@@ -23,4 +22,4 @@ async def on_message_edit(message_before, message_after):
                     inline=True)
     await message_before.channel.send(embed=embed)
 
-bot.run(token=TOKEN)
+bot.run("Put your token here")
